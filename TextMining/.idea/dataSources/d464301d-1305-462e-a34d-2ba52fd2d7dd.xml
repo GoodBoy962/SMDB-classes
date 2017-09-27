@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="db2@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.2">
+    <root id="1"/>
+    <database id="2" parent="1" name="db2">
+      <ObjectId>155019</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-09-17.18:54:47.060</IntrospectionTimestamp>
+      <IntrospectionStateNumber>26768</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11320</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11321</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>11853</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="test">
+      <ObjectId>155033</ObjectId>
+      <IntrospectionTimestamp>2017-09-17.18:55:26.624</IntrospectionTimestamp>
+      <IntrospectionStateNumber>26770</IntrospectionStateNumber>
+      <Visible>1</Visible>
+    </schema>
+    <table id="10" parent="3" name="person">
+      <ObjectId>155030</ObjectId>
+      <StateNumber>26768</StateNumber>
+    </table>
+    <table id="11" parent="3" name="schema_version">
+      <ObjectId>155020</ObjectId>
+      <StateNumber>26765</StateNumber>
+    </table>
+    <sequence id="12" parent="9" name="doc_id_seq">
+      <ObjectId>155034</ObjectId>
+      <StateNumber>26770</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="13" parent="9" name="stop_word_id_seq">
+      <ObjectId>155061</ObjectId>
+      <StateNumber>26770</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="14" parent="9" name="word_id_seq">
+      <ObjectId>155045</ObjectId>
+      <StateNumber>26770</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="15" parent="9" name="doc">
+      <ObjectId>155036</ObjectId>
+      <StateNumber>26770</StateNumber>
+    </table>
+    <table id="16" parent="9" name="stop_word">
+      <ObjectId>155063</ObjectId>
+      <StateNumber>26770</StateNumber>
+    </table>
+    <table id="17" parent="9" name="word">
+      <ObjectId>155047</ObjectId>
+      <StateNumber>26770</StateNumber>
+    </table>
+    <column id="18" parent="10" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26768</StateNumber>
+    </column>
+    <column id="19" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26768</StateNumber>
+    </column>
+    <column id="20" parent="11" name="installed_rank">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26765</StateNumber>
+    </column>
+    <column id="21" parent="11" name="version">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>26765</StateNumber>
+    </column>
+    <column id="22" parent="11" name="description">
+      <Position>3</Position>
+      <DataType>varchar(200)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26765</StateNumber>
+    </column>
+    <column id="23" parent="11" name="type">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26765</StateNumber>
+    </column>
+    <column id="24" parent="11" name="script">
+      <Position>5</Position>
+      <DataType>varchar(1000)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26765</StateNumber>
+    </column>
+    <column id="25" parent="11" name="checksum">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>26765</StateNumber>
+    </column>
+    <column id="26" parent="11" name="installed_by">
+      <Position>7</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26765</StateNumber>
+    </column>
+    <column id="27" parent="11" name="installed_on">
+      <Position>8</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26765</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+    </column>
+    <column id="28" parent="11" name="execution_time">
+      <Position>9</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26765</StateNumber>
+    </column>
+    <column id="29" parent="11" name="success">
+      <Position>10</Position>
+      <DataType>boolean|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26765</StateNumber>
+    </column>
+    <index id="30" parent="11" name="schema_version_pk">
+      <ObjectId>155027</ObjectId>
+      <ColNames>installed_rank</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="31" parent="11" name="schema_version_s_idx">
+      <ObjectId>155029</ObjectId>
+      <ColNames>success</ColNames>
+    </index>
+    <key id="32" parent="11" name="schema_version_pk">
+      <ObjectId>155028</ObjectId>
+      <ColNames>installed_rank</ColNames>
+      <UnderlyingIndexName>schema_version_pk</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="33" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26770</StateNumber>
+      <SequenceName>test.doc_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;test.doc_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="34" parent="15" name="name">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26770</StateNumber>
+    </column>
+    <index id="35" parent="15" name="doc_pkey">
+      <ObjectId>155043</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="36" parent="15" name="doc_pkey">
+      <ObjectId>155044</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>doc_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="37" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26770</StateNumber>
+      <SequenceName>test.stop_word_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;test.stop_word_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="38" parent="16" name="word">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26770</StateNumber>
+    </column>
+    <index id="39" parent="16" name="stop_word_pkey">
+      <ObjectId>155070</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="40" parent="16" name="stop_word_pkey">
+      <ObjectId>155071</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>stop_word_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="41" parent="17" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26770</StateNumber>
+      <SequenceName>test.word_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;test.word_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="42" parent="17" name="word">
+      <Position>2</Position>
+      <DataType>varchar|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>26770</StateNumber>
+    </column>
+    <column id="43" parent="17" name="doc_id">
+      <Position>3</Position>
+      <DataType>bigint|0</DataType>
+      <StateNumber>26770</StateNumber>
+    </column>
+    <index id="44" parent="17" name="word_pkey">
+      <ObjectId>155054</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="45" parent="17" name="word_pkey">
+      <ObjectId>155055</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>word_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="46" parent="17" name="word_doc_id_fkey">
+      <ObjectId>155056</ObjectId>
+      <ColNames>doc_id</ColNames>
+      <RefTableName>doc</RefTableName>
+      <RefKeyName>doc_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>

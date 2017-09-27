@@ -1,0 +1,10 @@
+*/Build
+*/_build/
+*/blib/
+build-*-stamp
+build/
+.*.swp
+/sandbox/
+MYMETA.*
+SPOOL-META
+/RELEASE
