@@ -2,6 +2,7 @@ package com.pliskin;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.*;
 
 public class Genom extends BaseJdbc {
@@ -10,11 +11,11 @@ public class Genom extends BaseJdbc {
 
     public static void main(String[] args) throws Exception {
         setUpJDBC();
-        parseGenoms(12);
+        uploadShinglesGenoms(9);
         connection.close();
     }
 
-    private static void parseGenoms(int pLength) throws FileNotFoundException {
+    private static void uploadShinglesGenoms(int pLength) throws FileNotFoundException {
         for (int i = 1; i <= 2; i++) {
             String fileName = "Genome_" + i + ".txt";
             Scanner sc = new Scanner(new File(GENOMS_LOCATION + fileName));
@@ -23,12 +24,23 @@ public class Genom extends BaseJdbc {
                 sb.append(sc.next());
             }
             String genom = sb.toString();
-            Set<String> ps = new HashSet<>();
+            Set<String> shingles = new HashSet<>();
             for (int j = 0; j < genom.length() - pLength - 1; j++) {
-                String p = genom.substring(j, j + pLength);
-                ps.add(p);
+                String shingle = genom.substring(j, j + pLength);
+                shingles.add(shingle);
             }
-            System.out.println(ps.size());
+            final int fileId = i;
+            shingles.forEach(shingle -> addNewShingle(shingle, fileId, pLength));
+        }
+    }
+
+    private static void addNewShingle(String shingle, int fileId, int length) {
+        try {
+            statement = connection.createStatement();
+            statement.executeUpdate("INSERT INTO test.shingles_" + length + " (shingle, genom) VALUES ('" + shingle + "', " + fileId + ")");
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

@@ -1,0 +1,44 @@
+RDBMD Objects
+
+## Query(Joins)
+
+Type of joins:
+Equi-joins(inner)
+Self joins
+Cartesian production (cross join)			все на все
+Left (outer) joins 							все из t1 и соответствия из t2
+Right (outer) joins 						все из t2 и соответствия из t1
+Full (outer) join 							комбинация left и right (их объединение)
+Natural										t1 Natural inner join t2 совпадение по имени и типам
+Anti-join (not in, not exists) 				select * ... WHERE NOT IN (SELECT) | limit
+Semi-join (exists, in) 						-//-			   EXISTS или IN				
+Lateral join(Postgres only) 				CROSS JOIN LATERAL - INNER JOIN в условии from
+
+
+
+Self join (+hierarchical queries)
+
+
+## Transactions
+
+ACID properties
+
+Concurrent transaction
+lost update problem
+dirty read problem
+non-repeatable read problem
+phantom reads problem
+
+
+Locks for tuples
+All problems should be silved...
+'S' - shared lok or "lock of read"
+'X' - exclusive lock of "lock of write"
+
+
+show deadlock_timeout;
+select pg_reload_conf();
+
+
+
+
