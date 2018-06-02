@@ -21,12 +21,13 @@ public class Text extends BaseJdbc {
             "FROM (SELECT COUNT(*) AS COUNT\n" +
             "      FROM TEST.WORD w\n" +
             "      WHERE w.WORD = ?\n" +
-            "      GROUP BY w.DOC_ID) c";
+            "      GROUP BY w.DOC_ID) C";
 
     public static void main(String[] args) throws FileNotFoundException, ClassNotFoundException, SQLException {
         setUpJDBC();
 //        addNewDocuments();
-        testTF_IDF();
+//        testTF_IDF();
+        addFullFile();
         connection.close();
     }
 
@@ -43,6 +44,23 @@ public class Text extends BaseJdbc {
                     addNewWord(word, docId);
                 }
             }
+        }
+    }
+
+    private static void addFullFile() throws FileNotFoundException, SQLException {
+        for (int i = 1; i < 6; i++) {
+            String fileName = "poem" + i + ".txt";
+            Scanner sc = new Scanner(new File(DOCS_LOCATION + fileName));
+            StringBuilder file = new StringBuilder();
+            while (sc.hasNext()) {
+                file.append(sc.next().toLowerCase()).append(' ');
+            }
+            System.out.println(file);
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO poems VALUES (?, ?)");
+            statement.setInt(1, i);
+            statement.setString(2, file.toString());
+            statement.execute();
+            statement.close();
         }
     }
 

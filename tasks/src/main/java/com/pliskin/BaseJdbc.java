@@ -5,9 +5,9 @@ import java.sql.*;
 public class BaseJdbc {
 
     protected static final String DRIVER_NAME = "org.postgresql.Driver";
-    protected static final String JDBC_URL = "jdbc:postgresql://localhost:5432/db2";
-    protected static final String JDBC_PASSWORD = "postgres";
-    protected static final String JDBC_LOGIN = "postgres";
+    protected static final String JDBC_URL = "jdbc:postgresql://localhost:5432/alex";
+    protected static final String JDBC_PASSWORD = "";
+    protected static final String JDBC_LOGIN = "alex";
 
     protected static Connection connection;
     protected static Statement statement;
